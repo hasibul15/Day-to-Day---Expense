@@ -35,7 +35,7 @@ showTrendsBtn.addEventListener('click', () => {
             expensePerCategory[item.category] = parseInt(item.amount);
         }
     });
-
+ 
     Object.keys(expensePerCategory).forEach((key) => {
         console.log(key, expensePerCategory[key], 'key, value');
         let categoryDiv = document.createElement('div');
@@ -91,7 +91,7 @@ addBtn.addEventListener('click', () => {
             <div>${transactionCategory.value}</div>
             <div>${transactionDate.value}</div>
             <span class="edit edit-btn-${transactionId.value}" data-id="${transactionId.value}"><img src="edit.png" class="edit-img"/></span>
-            <span class="dlt dlt-btn-${transactionId.value}">x</span>
+            <span class="dlt dlt-btn-${transactionId.value}" data-did="${transactionId.value}">x</span>
         `
         listContainer.appendChild(li);
         console.log(listContainer);
@@ -110,6 +110,10 @@ addBtn.addEventListener('click', () => {
         console.log(dltBtn, 'dltBtn');
         console.log(transactionId.value);
         dltBtn.addEventListener('click', function() {
+            console.log(data, 'data before', transactionId.value, typeof transactionId.value);
+            let delete_id = this.getAttribute('data-did');
+            data = data.filter((i) => i.id !== delete_id);
+            console.log(data, 'data after');
             itemToDelete.remove();
         });
 
@@ -127,7 +131,7 @@ addBtn.addEventListener('click', () => {
 
 
 function showTask(){
-
+    
     data.forEach((item) => {
         let li = document.createElement("li");
         li.classList.add("list-item-" + item.id);
@@ -138,7 +142,7 @@ function showTask(){
             <div>${item.category}</div>
             <div>${item.date}</div>
             <span class="edit"><img src="edit.png" class="edit-img edit-btn-${item.id}" data-id="${item.id}"/></span>
-            <span class="dlt dlt-btn-${item.id}">x</span>
+            <span class="dlt dlt-btn-${item.id}" data-did="${item.id}">x</span>
         `
         listContainer.appendChild(li);
         let editBtn = document.querySelector(`.edit-btn-${item.id}`);
@@ -199,7 +203,7 @@ editSubmitBtn.addEventListener('click',  () => {
         <div>${itemToEdit.category}</div>
         <div>${itemToEdit.date}</div>
         <span class="edit"><img src="edit.png" class="edit-img edit-btn-${itemToEdit.id}" data-id="${itemToEdit.id}"/></span>
-        <span class="dlt dlt-btn-${itemToEdit.id}">x</span>
+        <span class="dlt dlt-btn-${itemToEdit.id}" data-did="${itemToEdit.id}">x</span>
     `
 
     let editBtn = document.querySelector(`.edit-btn-${itemToEdit.id}`);
