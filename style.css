@@ -1,0 +1,163 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'poppins', sans-serif;
+    box-sizing: border-box;
+}
+.container{
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #153677, #4e085f);
+    padding: 10px;
+}
+.todo-app{
+    width: 100%;
+    max-width: 1200px;
+    background: #fff;
+    margin: 100px auto 20px;
+    padding: 40px 30px 70px;
+    border-radius: 10px;
+}
+.todo-app h2{
+    color: #002765;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.todo-app h2 img{
+    width: 30px;
+    margin-left: 10px;
+}
+.row{
+    display: grid;
+    gap: 10px;
+
+}
+input{
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 10px;
+    font-weight: 14px;
+    border: 1px solid gray;
+    border-radius: 20px;
+
+}
+select {
+    padding: 10px;
+    border: none;
+    outline: none;
+    background: transparent;
+    border: 1px solid gray;
+    border-radius: 20px;
+
+}
+button{
+    border: none;
+    outline: none;
+    padding: 16px 50px;
+    background: #ff5945;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 40px;
+}
+.title-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+ul li{
+    margin-block: 10px;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    row-gap: 10px;
+    font-size: 17px;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+}
+
+
+ul li .dlt, ul li .edit{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    font-size: 17px;
+    color: #555;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 50px;
+}
+
+ul li .dlt{
+    right: 10px;
+    cursor: pointer;
+}
+
+ul li .edit{
+    right: 40px;
+    cursor: pointer;
+}
+
+ul li span:hover{
+    background: #edeef0;
+}
+
+.trend-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.9);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.edit-overlay {
+    position: absolute;
+    inset: 0;
+    height: 100vh;
+    overflow: hidden;
+    background: rgba(255, 255, 255);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.edit-img {
+    height: 15px;
+    width: 15px;
+    cursor: pointer;
+}
+
+.close-trends, .close-edit {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.trends {
+    margin-inline: auto;
+    margin-block: auto;
+    width: 100%;
+    min-height: 350px;
+    max-width: 500px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.category-expense {
+    padding-block: 10px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    font-weight: 500;
+}

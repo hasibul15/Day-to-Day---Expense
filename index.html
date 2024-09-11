@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Expense</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="todo-app">
+            <div class="title-flex">
+                <h2>Day to day Expense <img src= "icon.png"></h2>
+                <button id="show-trends">Show Expense Trends</button>
+            </div>
+            <div class="row">
+                <input type="number" id="input-id" placeholder="Add transaction id">
+                <input type="text" id="input-desc" placeholder="Add description">
+                <input type="number" id="input-amount" placeholder="Add amount">
+                <select name="category" id="input-category">
+                    <option value="Groceries">Groceries</option>
+                    <option value="Rent">Rent</option>
+                    <option value="Food">Food</option>
+                    <option value="Transportation">Transportation</option>
+                    <option value="Healthcare">Healthcare</option>
+                    <option value="Insurance">Insurance</option>
+                    <option value="Personal Care">Personal Care</option>
+                    <option value="Entertainment">Entertainment</option>
+                    <option value="Clothing">Clothing</option>
+                    <option value="Education">Education</option>
+                    <option value="Miscellaneous">Miscellaneous</option>
+                </select>
+                <input type="date" id="input-date" placeholder="date">
+                <button id="add-btn">Add</button>
+            </div>
+            <ul id="list-container">
+                <li class="transaction" style="font-weight:bold;">
+                    <div>Transaction Id</div>
+                    <div>Transaction Description</div>
+                    <div>Amount</div>
+                    <div>Category</div>
+                    <div>Date</div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="trend-overlay">
+            <button class="close-trends">x</button>
+            <div class="trends">
+                <h2>Total Expense: <span class="total-expense">$334</span></h2>
+                <br>
+                <div class="trend">
+                    <h3>Category Wise Expense</h3>
+                    <div class="category-expense">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="edit-overlay">
+            <button class="close-edit">x</button>
+            <div class="row">
+                <h2>Edit Transaction</h2>
+                <input type="text" id="edit-desc" placeholder="Add description">
+                <input type="number" id="edit-amount" placeholder="Add amount">
+                <select name="category" id="edit-category">
+                    <option value="Groceries">Groceries</option>
+                    <option value="Rent">Rent</option>
+                    <option value="Food">Food</option>
+                    <option value="Transportation">Transportation</option>
+                    <option value="Healthcare">Healthcare</option>
+                    <option value="Insurance">Insurance</option>
+                    <option value="Personal Care">Personal Care</option>
+                    <option value="Entertainment">Entertainment</option>
+                    <option value="Clothing">Clothing</option>
+                    <option value="Education">Education</option>
+                    <option value="Miscellaneous">Miscellaneous</option>
+                </select>
+                <input type="date" id="edit-date" placeholder="date">
+                <button id="edit-btn">Edit</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
